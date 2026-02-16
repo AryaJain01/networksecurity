@@ -9,7 +9,7 @@ class NetworkSecuirtyException(Exception):
         
     
     def __str__(self):
-        return "Erroir occured in pythoin script name[{0}] line number [{1}] error message[{2}]"
+        return "Error occured in pythoin script name[{0}] line number [{1}] error message[{2}]"
         self.file_name, self.lineno,str(self.error_message)
         
 
