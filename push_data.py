@@ -15,14 +15,14 @@ import pandas as pd
 import numpy as np
 import pymongo
 from networksecurity.logging.logger import logging
-from networksecurity.exception.exception import NetworkSecuirtyException
+from networksecurity.exception.exception import NetworkSecurityException
 
 class NetwrokDataExctract():
     def __init__(self):
         try:
             pass
         except Exception as e:
-            raise NetworkSecuirtyException(e,sys)   
+            raise NetworkSecurityException(e,sys)   
       
             
     def csv_to_json_convertor(self,file_path):
@@ -32,7 +32,7 @@ class NetwrokDataExctract():
                 records=list(json.loads(data.T.to_json()).values())
                 return records                
             except Exception as e: 
-                raise NetworkSecuirtyException(e,sys)
+                raise NetworkSecurityException(e,sys)
             
             
     def insert_data_mongodb(self,records,database,collection):
@@ -48,7 +48,7 @@ class NetwrokDataExctract():
                 self.collection.insert_many(self.records)
                 return (len(self.records))
          except Exception as e:
-                raise NetworkSecuirtyException(e,sys)
+                raise NetworkSecurityException(e,sys)
             
             
 if __name__=='__main__':
